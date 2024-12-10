@@ -13,7 +13,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="<?=base_url();?>design/images/clinic.png" type="">
 
-  <title> Hermosilla Dental Clinic </title>
+  <title> e-Clinic </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="<?=base_url();?>design/css/bootstrap.css" />

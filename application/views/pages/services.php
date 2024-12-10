@@ -85,6 +85,51 @@
               </div>
             </div>
           </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="<?=base_url();?>design/images/optal.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                Ophthalmology
+                </h5>
+                <p>
+                Our specialists Doctors in ophthalmology aim to deliver compassionate care and intervention for your eye problems and diseases.<br>We see the value of eyesight as our primary sense so strive to keep our technologies and procedures top-of-the-line.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="<?=base_url();?>design/images/anest.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                Anesthesiology
+                </h5>
+                <p>
+                Our Anesthesiologists acknowledged that undergoing medical procedures tend to be fear-inducing experiences.<br>Therefore, they are committed to make your surgical procedures safe, comfortable, and non-threatening for you.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="<?=base_url();?>design/images/surgery.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                Surgery
+                </h5>
+                <p>
+                Our highly trained surgeon with expertise to make emphatic and specialized procedures using the appropriate and advanced technologies available.<br>They have the capability to perform surgical procedures with the patient safety and wellness in mind.
+                </p>
+              </div>
+            </div>
+          </div>          
         </div>
         <div class="btn-box">
           <a href="">
