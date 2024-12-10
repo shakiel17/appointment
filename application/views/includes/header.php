@@ -11,7 +11,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="<?=base_url();?>design/images/clinic_logo.png" type="">
+  <link rel="shortcut icon" href="<?=base_url();?>design/images/clinic.png" type="">
 
   <title> Hermosilla Dental Clinic </title>
 

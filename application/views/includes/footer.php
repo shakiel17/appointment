@@ -7,22 +7,22 @@
               Reach at..
             </h4>
             <div class="contact_link_box">
-              <a href="https://www.google.com/maps/place/TGP+The+Generics+Pharmacy/@7.0218392,125.0918265,20.75z/data=!4m14!1m7!3m6!1s0x32f8f96617265811:0x3e1dd19f5995fef0!2sOld+PC+Barracks!8m2!3d7.0221226!4d125.0925275!16s%2Fg%2F11qq004y49!3m5!1s0x32f8f97a9fc8ba11:0x7e301b9d3129ed2c!8m2!3d7.0219625!4d125.0919239!16s%2Fg%2F11gffrc5d9?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+              <a href="https://www.google.com/maps/dir/7.0218054,125.0936464/23CV%2BQ8P+Kidapawan+Medical+Specialist+Center,+Inc.,+Kidapawan-Ilomavis+Tourist+Rd,+Kidapawan+City,+Cotabato,+Philippines/@7.0219972,125.0928741,333m/data=!3m1!1e3!4m17!1m7!3m6!1s0x32f8f90d1e075c93:0xd451fc7ce64c8cdc!2sKidapawan+Medical+Specialists+Center,+Inc.!8m2!3d7.0219628!4d125.0933154!16s%2Fm%2F012g48yn!4m8!1m1!4e1!1m5!1m1!1s0x32f8f90d1e075c93:0xd451fc7ce64c8cdc!2m2!1d125.0933154!2d7.0219628?entry=ttu&g_ep=EgoyMDI0MTIwNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                029 Hilaria’s bldg. Old Pc Barracks, Brgy. Sudapin, Kidapawan city
+                Brgy. Sudapin, Kidapawan City, North Cotabato Philippines 9400
                 </span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +639622410805
+                  Call (064) 577 1762
                 </span>
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61561096636544" target="_blank">
+              <a href="#" target="_blank">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
                 <span>
-                Hermosilla Dental Clinic
+                e-Clinic
                 </span>
               </a>
             </div>
@@ -48,7 +48,7 @@
               About
             </h4>
             <p>
-              Beatae provident nobis mollitia magnam voluptatum, unde dicta facilis minima veniam corporis laudantium alias tenetur eveniet illum reprehenderit fugit a delectus officiis blanditiis ea.
+            We value your life and health by providing optimum and personalized healthcare services and treatments to our patients, every step of the way. KMSCI offers a wide range of comprehensive medical services and facilities to ensure your overall and holistic health.
             </p>
           </div>
         </div>

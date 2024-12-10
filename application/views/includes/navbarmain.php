@@ -9,7 +9,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="<?=base_url();?>">
             <span>
-              <img src="<?=base_url();?>design/images/clinic_main_logo.png" width="400">
+              <img src="<?=base_url();?>design/images/clinic.png" width="100"> e-Clinic
             </span>
           </a>
 

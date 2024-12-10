@@ -7,10 +7,10 @@
                 <div class="col-md-7">
                   <div class="detail-box">
                     <h1>
-                      Gentle Hands, Brighter Smiles
+                      Quality Health Care for All
                     </h1>
                     <p>
-                      Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                    Our comprehensive range of services including check-up, laboratory testing, imaging, and diagnostics are designed to provide you with the most accurate and reliable healthcare solutions to help you achieve optimal health and wellness.
                     </p>
                     <div class="btn-box">
                       <a href="" class="btn1">
