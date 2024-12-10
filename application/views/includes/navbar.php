@@ -31,9 +31,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>appointment">Appointment</a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="<?=base_url();?>login">Login/Register</a>
-              </li>              
+              </li>               -->
             </ul>
           </div>
         </nav>

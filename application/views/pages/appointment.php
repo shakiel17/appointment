@@ -31,6 +31,26 @@
                             </select>
                         </td>
                     </tr>
+                    <tr>
+                        <td><b>Month/Year:</b></td>
+                        <td>
+                                <?php
+                                $date=date('Y-m-d');                                
+                                $month=date('m');                                
+                                ?>
+                            <select name="month" class="form-control" required>
+                                <option value="">Select Month & Year</option>
+                                <?php
+                                $datenow=date('F',strtotime($date));
+                                while($month <= 12){                                                                    
+                                  echo "<option value='$month-".date('Y')."'>".$datenow." ".date('Y')."</option>";
+                                  $datenow=date('F',strtotime('1 month',strtotime($datenow)));
+                                  $month++;
+                                }                                
+                                ?>
+                            </select>
+                        </td>
+                    </tr>
                 </table>
               </div>
             </div>
