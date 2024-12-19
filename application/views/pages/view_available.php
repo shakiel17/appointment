@@ -8,6 +8,10 @@
           <p>
             Quality Health Care for All
           </p>
+          <br>
+          <p>
+            <a href="<?=base_url('appointment');?>" class="btn btn-success btn-sm">Select Doctor</a>
+          </p>
         </div>        
         <div class="row">
           <div class="col-md-12">
@@ -27,12 +31,35 @@
               </div>    
               <?php
               $datetime=$year."-".$month;
+              if($month==date('m') && $year==date('Y')){
+                $previous="disabled";
+              }else{
+                $previous="";
+              }
+              $nextdate=date('m-Y',strtotime('1 month',strtotime($datetime)));
+              $prevdate=date('m-Y',strtotime('-1 month',strtotime($datetime)));
               ?>
               <!-- <table width="100%" border="1" style="border-collapse:collapse; border-color:#96D4D4;"> -->
                 <div class="table-responsive">
                 <table class="table table-bordered" width="100%">
                   <tr>
-                    <td colspan="7" align="center"><b><?=date('F',strtotime('-1 month',strtotime($month)));?> <?=$year;?></b></td>
+                    <td colspan="2" align="right" style="border-right:0;">
+                      <?=form_open(base_url('view_available'));?>
+                      <input type="hidden" name="apcode" value="<?=$item['code'];?>">
+                      <input type="hidden" name="month" value="<?=$prevdate;?>">
+                      <button type="submit" class="btn btn-primary btn-sm" <?=$previous;?>><< Previous</button>
+                      <?=form_close();?>
+                    </td>
+                    <td align="center" colspan="3" style="border-right:0;border-left:0;">
+                      <h4><b><?=date('F',strtotime($datetime));?> <?=$year;?></b></h4>
+                    </td>
+                    <td colspan="2" align="left" style="border-left:0;">
+                      <?=form_open(base_url('view_available'));?>
+                      <input type="hidden" name="month" value="<?=$nextdate;?>">
+                      <input type="hidden" name="apcode" value="<?=$item['code'];?>">
+                      <button type="submit" class="btn btn-primary btn-sm">Next >></button>
+                      <?=form_close();?>
+                    </td>
                   </tr>
                     <tr>
                       <td align="center"><b>SUN</b></td>
@@ -66,7 +93,10 @@
                       }
                       if($i==1){
                         for($x=0;$x<7;$x++){
-                            if(date('w',strtotime($date))==$x){                              
+                            if(date('w',strtotime($date))==$x){
+                              if(date('w',strtotime($date)) == 6 || date('w',strtotime($date))==0){                        
+                                $button="NOT AVAILABLE!";                        
+                            }                              
                                 echo "<td style='width:14.285%; height: 100px;'><b style='float:right;'>$i</b>$button</td>"; 
                                 $w++;
                                 break;                                                                                                                                                     

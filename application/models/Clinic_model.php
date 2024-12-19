@@ -5,7 +5,7 @@
             $this->load->database();
         }    
         public function getAllDoctor(){
-            $result=$this->db->query("SELECT * FROM docfile ORDER BY lastname ASC");
+            $result=$this->db->query("SELECT * FROM docfile wHERE specialization <> 'ROD' ORDER BY lastname ASC");
             return $result->result_array();
         }
         public function getSingleDoctor($code){
@@ -28,6 +28,14 @@
             }else{
                 return false;
             }
+        }
+        public function getAllDoctorByDept($dept){
+            $result=$this->db->query("SELECT * FROM docfile WHERE specialization = '$dept' ORDER BY lastname ASC");
+            return $result->result_array();
+        }
+        public function getAllDepartment(){
+            $result=$this->db->query("SELECT specialization FROM docfile WHERE specialization <> 'ROD' AND specialization <> '' GROUP BY specialization ORDER BY specialization ASC");
+            return $result->result_array();
         }
     }
 ?>

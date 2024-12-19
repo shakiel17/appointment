@@ -8,60 +8,63 @@
           <p>
             Quality Health Care for All
           </p>
-        </div>
-        <?=form_open(base_url()."view_available");?>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="box ">              
+          <p>
+            <?=form_open(base_url('appointment_search'));?>
+            <b>Specialization:</b> 
+            <select name="specialization" class="form-control" required>
+              <option value="">Select Specialization</option>
+              <?php
+              $department=$this->Clinic_model->getAllDepartment();
+              foreach($department as $row){
+                echo "<option value='$row[specialization]'>$row[specialization]</option>";
+              }
+              ?>
+            </select>
+            <br>
+            <input type="submit" value="Search" class="btn btn-primary btn-sm">
+            <?=form_close();?>
+          </p>
+        </div>        
+        <div class="row">          
+          <?php
+          foreach($items as $item){            
+          ?>          
+          
+          <div class="col-md-3">
+            <div class="box ">
+              <div class="img-box">
+                <img src="<?=base_url();?>design/images/s4.png" alt="">
+              </div>
               <div class="detail-box">
                 <h5>
-                  Appointment Details
+                  <?=$item['name'];?>
                 </h5>
-                <table width="100%" border="0" style="text-align:left;">
-                    <tr>
-                        <td><b>Doctor:</b></td>
-                        <td>
-                            <select name="apcode" class="form-control" required>
-                                <option value="">Select Doctor</option>
-                                <?php
-                                foreach($items as $item){
-                                    echo "<option value='$item[code]'>$item[lastname], $item[firstname] - $item[specialization]</option>";
-                                }
-                                ?>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Month/Year:</b></td>
-                        <td>
-                                <?php
-                                $date=date('Y-m-d');                                
-                                $month=date('m');                                
-                                ?>
-                            <select name="month" class="form-control" required>
-                                <option value="">Select Month & Year</option>
-                                <?php
-                                $datenow=date('F',strtotime($date));
-                                while($month <= 12){                                                                    
-                                  echo "<option value='$month-".date('Y')."'>".$datenow." ".date('Y')."</option>";
-                                  $datenow=date('F',strtotime('1 month',strtotime($datenow)));
-                                  $month++;
-                                }                                
-                                ?>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
+                <p>
+                <?=$item['specialization'];?>
+                </p>
+                <?=form_open(base_url()."view_available");?>
+          <input type="hidden" name="month" value="<?=date('m-Y');?>">
+          <input type="hidden" name="apcode" value="<?=$item['code'];?>">
+                <p>
+                  <input type="submit" class="btn btn-success btn-sm" value="View Availability">
+                </p>
+                <?=form_close();?>
               </div>
             </div>
-          </div>                  
+          </div>  
+          
+                      
+          <?php
+          }
+          ?> 
         </div>
-        <div class="btn-box">
+        
+        <!-- <div class="btn-box">
           <button type="submit" class="btn btn-success">
             View Availability
           </button>
-        </div>
-        <?=form_close();?>
+        </div> -->
+        
       </div>
     </div>
   </section>

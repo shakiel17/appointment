@@ -38,12 +38,26 @@ date_default_timezone_set('Asia/Manila');
             if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
                 show_404();
             }             
+            $data['specialization'] = "INTERNAL MEDICINE";
             $data['items'] = $this->Clinic_model->getAllDoctor();
             $this->load->view('includes/header');
             $this->load->view('includes/navbar');
             $this->load->view('pages/'.$page,$data);         
             $this->load->view('includes/footer');               
         } 
+        public function appointment_search(){
+            $page = "appointment";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }        
+            $spe=$this->input->post('specialization');
+            $data['specialization'] = $spe;
+            $data['items'] = $this->Clinic_model->getAllDoctorByDept($spe);
+            $this->load->view('includes/header');
+            $this->load->view('includes/navbar');
+            $this->load->view('pages/'.$page,$data);         
+            $this->load->view('includes/footer');               
+        }
         public function view_available(){
             $page = "view_available";
             if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
@@ -53,7 +67,7 @@ date_default_timezone_set('Asia/Manila');
             $m=$this->input->post('month');
             $d=explode('-',$m);
             $month=$d[0];
-            $year=$d[1];
+            $year=$d[1];        
             $data['month'] = $month;
             $data['year'] = $year;
             $data['item'] = $this->Clinic_model->getSingleDoctor($code);
