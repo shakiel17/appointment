@@ -84,8 +84,8 @@
                           if($res >= $item['vatex']){
                             $button="NOT AVAILABLE!";                        
                           }else{                          
-                            $button="
-                          Available<br>
+                            $button="<br>
+                          <font size='2'>$item[rebates]</font><br>
                           <form action='".base_url()."appointment_details' method='POST'>
                           <input type='hidden' name='apcode' value='$item[code]'>
                           <input type='hidden' name='datearray' value='$date'>
