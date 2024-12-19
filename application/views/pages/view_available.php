@@ -74,30 +74,32 @@
                     $w=0;                    
                     for($i=1;$i<=date('t',strtotime($datetime));$i++){
                       $date=date('Y-m-d',strtotime($datetime."-".$i));                      
-                      $check=$this->Clinic_model->db->query("SELECT * FROM appointment WHERE apcode='$item[code]'");
+                      $check=$this->Clinic_model->db->query("SELECT * FROM appointment WHERE apcode='$item[code]' AND appointment_date='$date'");
                       $res=$check->num_rows();
-                      if(strtotime($date) <= strtotime(date('Y-m-d'))){
-                        $button="NOT AVAILABLE!";
-                      }else{
-                        if($res >= $item['vatex']){
-                          $button="NOT AVAILABLE!";                        
+                      $day=date('w',strtotime($date));
+                      if(strpos($item['PF'],"$day")){                        
+                        if(strtotime($date) <= strtotime(date('Y-m-d'))){
+                          $button="NOT AVAILABLE!";
                         }else{
-                          $button="
-                        Available<br>
-                        <form action='".base_url()."appointment_details' method='POST'>
-                        <input type='hidden' name='apcode' value='$item[code]'>
-                        <input type='hidden' name='datearray' value='$date'>
-                          <button type='submit' class='btn btn-success btn-sm'><i class='fa fa-calendar'></i> Select Date</button>
-                        </form>";
-                        }  
-                      }
+                          if($res >= $item['vatex']){
+                            $button="NOT AVAILABLE!";                        
+                          }else{                          
+                            $button="
+                          Available<br>
+                          <form action='".base_url()."appointment_details' method='POST'>
+                          <input type='hidden' name='apcode' value='$item[code]'>
+                          <input type='hidden' name='datearray' value='$date'>
+                            <button type='submit' class='btn btn-success btn-sm'><i class='fa fa-calendar'></i> Select Date</button>
+                          </form>";
+                          }  
+                        }
+                      }else{
+                        $button="NOT AVAILABLE!";                        
+                      }                      
                       if($i==1){
                         for($x=0;$x<7;$x++){
-                            if(date('w',strtotime($date))==$x){
-                              if(date('w',strtotime($date)) == 6 || date('w',strtotime($date))==0){                        
-                                $button="NOT AVAILABLE!";                        
-                            }                              
-                                echo "<td style='width:14.285%; height: 100px;'><b style='float:right;'>$i</b>$button</td>"; 
+                            if(date('w',strtotime($date))==$x){                              
+                             echo "<td style='width:14.285%; height: 100px;'><b style='float:right;'>$i</b>$button</td>";                                 
                                 $w++;
                                 break;                                                                                                                                                     
                             }else{
@@ -106,24 +108,7 @@
                             }
                            
                        }
-                    }else{
-                      if(strtotime($date) <= strtotime(date('Y-m-d'))){
-                        $button="NOT AVAILABLE!";
-                      }else if(date('w',strtotime($date)) == 6 || date('w',strtotime($date))==0){                        
-                          $button="NOT AVAILABLE!";                        
-                      }else{
-                        if($res >= $item['vatex']){
-                          $button="NOT AVAILABLE!";                        
-                        }else{
-                          $button="
-                        Available<br>
-                        <form action='".base_url()."appointment_details' method='POST'>
-                        <input type='hidden' name='apcode' value='$item[code]'>
-                        <input type='hidden' name='datearray' value='$date'>
-                          <button type='submit' class='btn btn-success btn-sm'><i class='fa fa-calendar'></i> Select Date</button>
-                        </form>";
-                        }                        
-                      }
+                    }else{                      
                         echo "<td style='width:14.285%; height: 100px;'><b style='float:right;'>$i</b>$button</td>"; 
                         $w++;
                     }
