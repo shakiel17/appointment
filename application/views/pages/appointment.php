@@ -33,7 +33,17 @@
           <div class="col-md-3">
             <div class="box ">
               <div class="img-box">
-                <img src="<?=base_url();?>design/images/s4.png" alt="">
+                <?php
+                if($item['pic']==""){
+                  ?>
+                  <img src="<?=base_url();?>design/images/s4.png" alt="">
+                  <?php
+                }else{
+                  ?>
+                  <img src="data:image/jpg;charset=utf8;base64,<?=base64_encode($item['pic']);?>" alt="">
+                  <?php
+                }
+                ?>              
               </div>
               <div class="detail-box">
                 <h5>
