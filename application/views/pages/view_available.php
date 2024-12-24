@@ -79,10 +79,12 @@
                       $day=date('w',strtotime($date));
                       if(strpos($item['PF'],"$day")){                        
                         if(strtotime($date) <= strtotime(date('Y-m-d'))){
-                          $button="NOT AVAILABLE!";
+                          $button="<br><br>NOT AVAILABLE!";
+			   $color="background-color:gray;";
                         }else{
                           if($res >= $item['vatex']){
-                            $button="NOT AVAILABLE!";                        
+                            $button="<br><br>NOT AVAILABLE!";                        
+			   $color="background-color:gray;";
                           }else{                          
                             $button="<br>
                           <font size='2'>$item[rebates]</font><br>
@@ -91,15 +93,17 @@
                           <input type='hidden' name='datearray' value='$date'>
                             <button type='submit' class='btn btn-success btn-sm'><i class='fa fa-calendar'></i> Select Date</button>
                           </form>";
+				$color="";
                           }  
                         }
                       }else{
-                        $button="NOT AVAILABLE!";                        
+                         $button="<br><br>NOT AVAILABLE!";
+			   $color="background-color:gray;";                      
                       }                      
                       if($i==1){
                         for($x=0;$x<7;$x++){
                             if(date('w',strtotime($date))==$x){                              
-                             echo "<td style='width:14.285%; height: 100px;'><b style='float:right;'>$i</b>$button</td>";                                 
+                             echo "<td style='width:14.285%; height: 100px; $color'><b style='float:right;'>$i</b>$button</td>";                                 
                                 $w++;
                                 break;                                                                                                                                                     
                             }else{
@@ -109,7 +113,7 @@
                            
                        }
                     }else{                      
-                        echo "<td style='width:14.285%; height: 100px;'><b style='float:right;'>$i</b>$button</td>"; 
+                        echo "<td style='width:14.285%; height: 100px; $color'><b style='float:right;'>$i</b>$button</td>"; 
                         $w++;
                     }
                                                                
