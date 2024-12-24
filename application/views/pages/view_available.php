@@ -41,8 +41,8 @@
               ?>
               <!-- <table width="100%" border="1" style="border-collapse:collapse; border-color:#96D4D4;"> -->
                 <div class="table-responsive">
-                <table class="table table-bordered" width="100%">
-                  <tr>
+                <table class="table table-bordered" width="100%" style="table-layout: fixed;">
+                  <tr style="background-color: greenyellow;">
                     <td colspan="2" align="right" style="border-right:0;">
                       <?=form_open(base_url('view_available'));?>
                       <input type="hidden" name="apcode" value="<?=$item['code'];?>">
@@ -62,13 +62,13 @@
                     </td>
                   </tr>
                     <tr>
-                      <td align="center"><b>SUN</b></td>
-                      <td align="center"><b>MON</b></td>
-                      <td align="center"><b>TUE</b></td>
-                      <td align="center"><b>WED</b></td>
-                      <td align="center"><b>THU</b></td>
-                      <td align="center"><b>FRI</b></td>
-                      <td align="center"><b>SAT</b></td>
+                      <td align="center" style="background-color:red; color:white;"><b>SUN</b></td>
+                      <td align="center" style="background-color:blue; color:white;"><b>MON</b></td>
+                      <td align="center" style="background-color:blue; color:white;"><b>TUE</b></td>
+                      <td align="center" style="background-color:blue; color:white;"><b>WED</b></td>
+                      <td align="center" style="background-color:blue; color:white;"><b>THU</b></td>
+                      <td align="center" style="background-color:blue; color:white;"><b>FRI</b></td>
+                      <td align="center" style="background-color:blue; color:white;"><b>SAT</b></td>
                     </tr>
                     <?php
                     $w=0;                    
@@ -79,41 +79,41 @@
                       $day=date('w',strtotime($date));
                       if(strpos($item['PF'],"$day")){                        
                         if(strtotime($date) <= strtotime(date('Y-m-d'))){
-                          $button="<br><br>NOT AVAILABLE!";
+                          $button="<br><font style='font-size:1.5w;'>N/A</font>";
 			   $color="background-color:gray;";
                         }else{
                           if($res >= $item['vatex']){
-                            $button="<br><br>NOT AVAILABLE!";                        
+                            $button="<br><font style='font-size:1.5w;'>FULL</font>";                       
 			   $color="background-color:gray;";
                           }else{                          
                             $button="<br>
-                          <font size='2'>$item[rebates]</font><br>
-                          <form action='".base_url()."appointment_details' method='POST'>
+                          <font style='font-size:2vmin;'>$item[rebates]</font><br>
+                          <form action='".base_url()."appointment_details' method='POST' style='width:100%;'>
                           <input type='hidden' name='apcode' value='$item[code]'>
                           <input type='hidden' name='datearray' value='$date'>
-                            <button type='submit' class='btn btn-success btn-sm'><i class='fa fa-calendar'></i> Select Date</button>
+                            <button type='submit' style='font-size:2vmin;border:0;background-color:green; color:white; padding:5px; border-radius:5px;'><i class='fa fa-calendar'></i> Select Date</button>
                           </form>";
 				$color="";
                           }  
                         }
                       }else{
-                         $button="<br><br>NOT AVAILABLE!";
+                         $button="<br><font style='font-size:1.5w;'>N/A</font>";
 			   $color="background-color:gray;";                      
                       }                      
                       if($i==1){
                         for($x=0;$x<7;$x++){
                             if(date('w',strtotime($date))==$x){                              
-                             echo "<td style='width:14.285%; height: 100px; $color'><b style='float:right;'>$i</b>$button</td>";                                 
+                             echo "<td style='$color' align='center'><b style='float:center; font-size:3vw;'>$i</b>$button</td>";                                 
                                 $w++;
                                 break;                                                                                                                                                     
                             }else{
-                                echo "<td>&nbsp;</td>";
+                                echo "<td style='background-color:gray;'>&nbsp;</td>";
                                 $w++;
                             }
                            
                        }
                     }else{                      
-                        echo "<td style='width:14.285%; height: 100px; $color'><b style='float:right;'>$i</b>$button</td>"; 
+                        echo "<td style='$color' align='center'><b style='float:center; font-size:3vw;'>$i</b>$button</td>"; 
                         $w++;
                     }
                                                                
