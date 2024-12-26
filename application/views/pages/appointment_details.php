@@ -53,6 +53,10 @@
                       <td><input type="date" name="birthdate" class="form-control" required></td>
                     </tr>
                     <tr>
+                      <td><b>Contact No.</b></td>
+                      <td><input type="text" name="contactno" class="form-control" required></td>
+                    </tr>
+                    <tr>
                       <td></td>
                       <td><input type="submit" class="btn btn-primary" value="Submit"></td>
                     </tr>

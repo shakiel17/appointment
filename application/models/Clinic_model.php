@@ -20,9 +20,10 @@
             $middlename=$this->input->post('middlename');
             $suffix=$this->input->post('suffix');
             $birthdate=$this->input->post('birthdate');
+            $contactno=$this->input->post('contactno');
             $date=date('Y-m-d');
             $time=date('H:i:s');
-            $result=$this->db->query("INSERT INTO appointment(apcode,lastname,firstname,middlename,suffix,birthdate,appointment_date,datearray,timearray) VALUES('$code','$lastname','$firstname','$middlename','$suffix','$birthdate','$datearray','$date','$time')");
+            $result=$this->db->query("INSERT INTO appointment(apcode,lastname,firstname,middlename,suffix,birthdate,contactno,appointment_date,datearray,timearray) VALUES('$code','$lastname','$firstname','$middlename','$suffix','$birthdate','$contactno','$datearray','$date','$time')");
             if($result){
                 return true;
             }else{
