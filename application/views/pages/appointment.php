@@ -24,6 +24,15 @@
             <input type="submit" value="Search" class="btn btn-primary btn-sm">
             <?=form_close();?>
           </p>
+          <p>
+            <?=form_open(base_url('appointment_search_doctor'));?>
+            <b>Last Name:</b> 
+            <input type="hidden" name="specialization" value="<?=$specialization;?>">
+            <input type="text" name="lastname" class="form-control">
+            <br>
+            <input type="submit" value="Search" class="btn btn-primary btn-sm">
+            <?=form_close();?>
+          </p>
         </div>        
         <div class="row">          
           <?php

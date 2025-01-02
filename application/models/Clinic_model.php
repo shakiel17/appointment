@@ -38,5 +38,9 @@
             $result=$this->db->query("SELECT specialization FROM docfile WHERE specialization <> 'ROD' AND specialization <> '' GROUP BY specialization ORDER BY specialization ASC");
             return $result->result_array();
         }
+        public function getAllDoctorByDeptName($dept,$lastname){
+            $result=$this->db->query("SELECT * FROM docfile WHERE specialization = '$dept' AND `name` LIKE '%$lastname%' ORDER BY lastname ASC");
+            return $result->result_array();
+        }
     }
 ?>

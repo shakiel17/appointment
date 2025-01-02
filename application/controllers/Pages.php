@@ -58,6 +58,20 @@ date_default_timezone_set('Asia/Manila');
             $this->load->view('pages/'.$page,$data);         
             $this->load->view('includes/footer');               
         }
+        public function appointment_search_doctor(){
+            $page = "appointment";
+            if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
+                show_404();
+            }        
+            $spe=$this->input->post('specialization');
+            $lastname=$this->input->post('lastname');
+            $data['specialization'] = $spe;
+            $data['items'] = $this->Clinic_model->getAllDoctorByDeptName($spe,$lastname);
+            $this->load->view('includes/header');
+            $this->load->view('includes/navbar');
+            $this->load->view('pages/'.$page,$data);         
+            $this->load->view('includes/footer');               
+        }
         public function view_available(){
             $page = "view_available";
             if(!file_exists(APPPATH.'views/pages/'.$page.".php")){
