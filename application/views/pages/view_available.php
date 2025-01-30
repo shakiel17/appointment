@@ -76,9 +76,11 @@
                       $date=date('Y-m-d',strtotime($datetime."-".$i));                      
                       $check=$this->Clinic_model->db->query("SELECT * FROM appointment WHERE apcode='$item[code]' AND appointment_date='$date'");
                       $res=$check->num_rows();
+                      $qry=$this->Clinic_model->db->query("SELECT * FROM docfile WHERE code='$item[code]'");
+                      $rs1=$qry->row_array();
                       $day=date('w',strtotime($date));
                       if(strpos($item['PF'],"$day")){                        
-                        if(strtotime($date) <= strtotime(date('Y-m-d'))){
+                        if(strtotime($date) <= strtotime(date('Y-m-d')) || strpos($rs1['date_unavailable'],$date) !== false){
                           $button="<br><font style='font-size:1.5w;'>N/A</font>";
 			   $color="background-color:gray;";
                         }else{
